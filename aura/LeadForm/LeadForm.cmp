@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride" access="global">
+    
+    <c:leadFormLwc></c:leadFormLwc>
+
+</aura:component>

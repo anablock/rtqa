@@ -1,0 +1,37 @@
+<template>
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="select-01">Select Store</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                <select class="slds-select" id="select-01" onchange={handleChange}>
+                    <template for:each={defResult} for:item="def">> 
+                            <option key={def.key} value={def.value}>{def.value}</option>
+                    </template>
+                    <template for:each={selectOptions} for:item="opt">
+                            <option key={opt.key} value={opt.value}>{opt.value}</option>
+                    </template>
+                </select>
+                </div>
+            </div>
+        </div>
+
+            <!--   <div class="slds-form-element">             
+              <lightning-combobox
+                    name="Role"
+                    label="Location"
+                    value={value}                  
+                    options={storeList}
+                    onchange={handleChange} >
+            </lightning-combobox>              
+            <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12" padding="around-small">                        
+                        <button class="myBtn slds-button slds-button_brand" name="Continue" onclick={navigateToObjectHome}>Continue</button>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small">
+                     
+                        <button class="myBtn slds-button slds-button_neutral" name="LogOut" onclick={handleContinue}>LogOut</button>
+                    </lightning-layout-item>                 
+           </lightning-layout> 
+         </div> -->
+     
+</template>

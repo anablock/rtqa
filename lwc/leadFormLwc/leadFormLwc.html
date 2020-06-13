@@ -1,0 +1,269 @@
+<!-- If  you change anything in this check the impact on leadFormLwcIE11 that is used for rendering on IE11 -->
+<template>
+    <div class="overlay"></div>
+    <div class="slds-m-around_large">
+        <div if:true={showSpinner} class="spinner">
+            <lightning-spinner alternative-text="Loading..." variant="brand">  </lightning-spinner>
+        </div>
+    </div>
+    <div class="container"> 
+        <lightning-layout multiple-rows="true">
+            <lightning-record-edit-form object-api-name="Lead" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                <!-- The header of the Form starts here-->
+                <lightning-layout-item size="12">
+                    <div class="section slds-m-bottom_medium">
+                        <lightning-layout>
+                            <lightning-layout-item alignment-bump="left" size="3">
+                                <template if:true={showSaveMobile}>
+                                    <div class="slds-text-align_left slds-text-heading_medium slds-m-around_medium">
+                                        <lightning-button variant="base" label={label.Cancel} title={label.Cancel} onclick={handleCancel}></lightning-button>
+                                    </div>
+                                </template>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6">
+                                <div class="slds-text-align_center slds-text-heading_medium slds-m-around_medium"> {label.NewLead}  </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item alignment-bump="right" size="3">
+                                <template if:true={showSaveMobile}>
+                                    <div class="slds-text-align_right slds-text-heading_medium slds-m-around_medium">
+                                        <lightning-button variant="base" label={label.Save} title={label.Save} type="submit"></lightning-button>
+                                    </div>
+                                </template>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-layout-item>
+                <!-- The header of the Form ends here-->
+
+                <!-- The consent of the Form starts here-->
+                <lightning-layout-item size="12">
+                    <div class="section slds-m-bottom_medium">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="9" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="9">
+                                <div class="slds-text-align_left slds-text-heading_medium ">
+                                    <span if:false={isSpanish}>{label.CustomerConsent} </span>
+                                    <span if:true={isSpanish}>{label.CustomerConsentSpanish} </span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="3" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="3">
+                                <template if:false={isAccepted}>
+                                    <c-multi-select-buttons field-api-name="PreferedLanguage__c" obj-api-name="Lead" is-icon="false" button-type="Large" onvaluechange={picklistValueChange} label="none" mark-req="false"></c-multi-select-buttons>
+                                </template>
+                                <div class="slds-form-element__control slds-float-right slds-grid itemBody" if:true={isAccepted}>
+                                    <span class="slds-form-element__static slds-grow is-read-only">
+                                        <span class="uiOutputText">{leadRecord.PreferedLanguage__c}</span>
+                                    </span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="9" padding="around-small">
+                                <div class="slds-text-align_left">
+                                    <span if:false={isSpanish}> {label.ConsentMessage} </span>
+                                    <span if:true={isSpanish}> {label.ConsentMessageSpanish} </span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" small-device-size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+                                <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                    <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                        <span if:false={isSpanish}> {fieldData.MobilePhone.label} </span>
+                                        <span if:true={isSpanish}> {label.MobilePhoneSpanish} </span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="slds-form-element__control slds-grid itemBody" if:true={isAccepted}>
+                                        <span class="slds-form-element__static slds-grow  is-read-only">
+                                            <span class="uiOutputPhone">{leadRecord.MobilePhone}</span>
+                                        </span>
+                                    </div>
+                                    <template if:false={isAccepted}>
+                                        <lightning-input-field required field-name="MobilePhone" variant="label-hidden" value={leadRecord.MobilePhone}></lightning-input-field>
+                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" small-device-size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+                                <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                    <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                        <span if:false={isSpanish}> {fieldData.Email.label} </span>
+                                        <span if:true={isSpanish}> {label.EmailSpanish} </span>
+                                    </label>
+                                    <div class="slds-form-element__control slds-grid itemBody" if:true={isAccepted}>
+                                        <span class="slds-form-element__static slds-grow  is-read-only">
+                                            <span class="uiOutputPhone">{leadRecord.Email}</span>
+                                        </span>
+                                    </div>
+                                    <template if:false={isAccepted}>
+                                        <lightning-input-field field-name="Email" variant="label-hidden" value={leadRecord.Email}></lightning-input-field>
+                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" small-device-size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+                                <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                    <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                        <span if:false={isSpanish}> {fieldData.FirstName.label} </span>
+                                        <span if:true={isSpanish}> {label.FirstNameSpanish}</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="slds-form-element__control slds-grid itemBody" if:true={isAccepted}>
+                                        <span class="slds-form-element__static slds-grow  is-read-only">
+                                            <span class="uiOutputPhone">{leadRecord.FirstName}</span>
+                                        </span>
+                                    </div>
+                                    <template if:false={isAccepted}>
+                                        <lightning-input-field required field-name="FirstName" variant="label-hidden" value={leadRecord.FirstName}></lightning-input-field>
+                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="6" small-device-size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+                                <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                    <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                        <span>
+                                                            <template if:false={isSpanish}> {fieldData.LastName.label} </template>
+                                                            <template if:true={isSpanish}> {label.LastNameSpanish} </template>
+                                                        </span>
+                                                        <span class="required">*</span>
+                                                    </label>
+                                    <template if:true={isAccepted}>
+                                                        <div class="slds-form-element__control slds-grid itemBody">
+                                                            <span class="slds-form-element__static slds-grow  is-read-only">
+                                                                <span class="uiOutputPhone">{leadRecord.LastName}</span>
+                                                            </span>
+                                                        </div>
+                                                    </template>
+                                    <template if:false={isAccepted}>
+                                                        <lightning-input-field required field-name="LastName" variant="label-hidden" value={leadRecord.LastName}></lightning-input-field>
+                                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                            <template if:false={isAccepted}>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <template if:true={isSpanish}>
+                                        <lightning-button variant="brand-outline" label={label.CancelSpanish} title={label.CancelSpanish} onclick={handleReset}></lightning-button>
+                                            <span class="slds-m-horizontal_medium">
+                                                <lightning-button variant="brand" label={label.AcceptSpanish} title={label.AcceptSpanish} type="submit"></lightning-button>
+                                            </span>
+                                    </template>
+                                    <template if:false={isSpanish}>
+                                        <lightning-button variant="brand-outline" label={label.Cancel} title={label.Cancel} onclick={handleReset}></lightning-button>
+                                        <span class="slds-m-horizontal_medium">
+                                            <lightning-button variant="brand" label={label.Accept} title={label.Accept} type="submit"></lightning-button>
+                                        </span>
+                                    </template>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+                    </div>
+                </lightning-layout-item>
+                <!-- The consent of the Form ends here-->
+
+
+                <!-- The Employee use of the Form starts here-->
+                <lightning-layout-item size="12">
+                    <div class="section slds-m-bottom_medium employeeUse">
+                        <div class="slds-border_bottom ">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <div class="slds-text-align_left slds-text-heading_medium ">{label.EmployeeUseOnly}</div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                        <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                            <span>{fieldData.Store__c.label}</span>
+                                        </label>
+                                        <div class="slds-form-element__control slds-grid itemBody">
+                                            <span class="slds-form-element__static slds-grow  is-read-only">
+                                                <lightning-formatted-url value={store.Url} label={store.Name} target="_blank"></lightning-formatted-url>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </lightning-layout-item>
+                                <template if:true={isAccepted}>
+                                    <lightning-layout-item size="6" small-device-size="12" medium-device-size="6" large-device-size="6" padding="around-small">
+                                        <lightning-input-field required field-name="ReasonforLeaving__c" variant="label-stacked"></lightning-input-field>
+                                    </lightning-layout-item>
+                                </template>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <c-multi-select-buttons field-api-name="ProductsDiscussed__c" obj-api-name="Lead" is-icon="false" button-type="Medium" onvaluechange={picklistValueChange} label="" mark-req="true"></c-multi-select-buttons>
+                                </lightning-layout-item>
+                                <template if:true={isAdditionalLines}>
+                                    <lightning-layout-item  size="6" padding="around-small">
+                                        <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                            <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                <span>{label.AdditionalLines}</span>
+                                                <span></span>
+                                            </label>
+                                            <lightning-input-field field-name="NumberofAdditionalLines__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item  size="6" padding="around-small"></lightning-layout-item>
+                                </template>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <c-multi-select-buttons field-api-name="CustomerType__c" obj-api-name="Lead" is-icon="false" button-type="Medium" onvaluechange={picklistValueChange} label="" mark-req="true"></c-multi-select-buttons>
+                                </lightning-layout-item>
+                                <template if:true={isPreviousCarrier}>
+                                    <lightning-layout-item  size="6" padding="around-small">
+                                        <lightning-input-field field-name="PreviousCarrier__c" variant="label-stacked"></lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item  size="6" padding="around-small"></lightning-layout-item>
+                                </template>
+                                <lightning-layout-item size="6" padding="around-small">
+                                    <lightning-input-field field-name="Rating" variant="label-stacked"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <lightning-input-field field-name="OtherNotes__c" variant="label-stacked"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-border_bottom">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <div class="slds-text-align_left slds-text-heading_medium ">{label.ContactPreferences}</div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <c-multi-select-buttons field-api-name="PreferredMethodofContact__c" obj-api-name="Lead" is-icon="true" button-type="Small" onvaluechange={picklistValueChange} label="" mark-req="false"></c-multi-select-buttons>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="around-small">
+                                    <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                                        <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                            <span>{label.CustomerContactDate}</span>
+                                        </label>
+                                        <lightning-input-field field-name="NextFollowUpDate__c" variant="label-hidden" ></lightning-input-field>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6" padding="around-small"></lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <c-multi-select-buttons field-api-name="PreferredDayOfContact__c" obj-api-name="Lead" is-icon="false" button-type="Small" onvaluechange={picklistValueChange} label={label.PreferredDayOfContact} mark-req="false"></c-multi-select-buttons>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small">
+                                    <c-multi-select-buttons field-api-name="PreferredTimeOfContact__c" obj-api-name="Lead" is-icon="false" button-type="Small" onvaluechange={picklistValueChange} label={label.PreferredTimeOfContact} mark-req="false"></c-multi-select-buttons>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-border_bottom" if:true={showSaveDesktop}>
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12" padding="around-medium" alignment-bump="right" >
+                                    <div class="slds-float_right">
+                                        <lightning-button variant="brand-outline" label={label.Cancel} title={label.Cancel} onclick={handleCancel}></lightning-button>
+                                        <span class="slds-m-horizontal_medium">
+                                            <lightning-button variant="brand" label={label.Save} title={label.Save} type="submit"></lightning-button>
+                                        </span>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-m-bottom_xx-large">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="9" padding="around-medium">
+                                    <div class="slds-text-align_left"> {label.ResetMessage} </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="3" padding="around-medium" alignment-bump="right">
+                                    <div class="slds-float_right">
+                                        <lightning-button variant="brand-outline" label={label.ResetFormFields} title={label.ResetFormFields} onclick={handleReset}></lightning-button>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+                </lightning-layout-item>
+                <!-- The Employee use of the Form ends here-->
+            </lightning-record-edit-form>
+        </lightning-layout>
+    </div>
+</template>

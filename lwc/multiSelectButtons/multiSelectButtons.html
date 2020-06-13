@@ -1,0 +1,45 @@
+<!-- If  you change anything in this check the impact on multiSelectButtonsIE11 that is used for rendering on IE11 -->
+<template>
+    <lightning-layout multiple-rows="true">
+        <template if:true={showLabel}>
+            <lightning-layout-item size="12" >
+                <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                        <span>{label}</span>
+                        <template if:true={isRequired}>
+                            <span class="required">*</span>
+                        </template>
+                    </label>
+                </div>
+            </lightning-layout-item>
+        </template>
+        <template for:each={options} for:item="option">
+            <lightning-layout-item key={option.value} size="3" small-device-size={smallDeviceSize} medium-device-size={mediumDeviceSize} large-device-size={largeDeviceSize}>
+                <div class={option.class} data-val={option.value} onclick={handleValueChange}>
+                    <template if:true={showIcon}>
+                        <span class="image-container">
+                            <svg class="icon-container slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                                <use xlink:href={option.iconName}> </use>
+                            </svg>
+                        </span>
+                        <span class="content-container">{option.label}</span>
+                    </template>
+                    <template if:false={showIcon}>
+                        <span class="content-container-noimage">{option.label}</span>
+                    </template>
+                    <template if:true={option.isAdditionalLabel}>
+                        <div class="add-content-container">{option.additionalLabel}</div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </template>
+        <lightning-layout-item size="12" >
+            <div if:true={error}>
+                <b style="color: red;">{error}</b>
+            </div>
+        </lightning-layout-item>
+        
+    </lightning-layout>
+
+    
+</template>

@@ -1,0 +1,37 @@
+<template>
+        <div if:true={showLabel} class="slds-size--12-of-12">
+            <div class="uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select">
+                <label class="label inputLabel uiLabel-left form-element__label uiLabel">
+                    <span>{label}</span>
+                    <span class="required" if:true={isRequired}>*</span>
+                </label>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap">
+            <template for:each={options} for:item="option" >
+                <div key={option.value} class={largeDeviceSize}>
+                    <div class={option.class} data-val={option.value} onclick={handleValueChange}>
+                        <template if:true={showIcon}>
+                            <span class="image-container">
+                                <svg class="icon-container slds-icon slds-icon-text-default slds-icon_x-small" aria-hidden="true">
+                                    <use xlink:href={option.iconName}> </use>
+                                </svg>
+                            </span>
+                            <span class="content-container">{option.label}</span>
+                        </template>
+                        <template if:false={showIcon}>
+                            <span class="content-container-noimage">{option.label}</span>
+                        </template>
+                        <template if:true={option.isAdditionalLabel}>
+                            <div class="add-content-container">{option.additionalLabel}</div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </div>
+        
+        <div if:true={error} class="slds-size--12-of-12 slds-p-around_small">
+            <b style="color: red;">{error}</b>
+        </div>
+        
+</template>

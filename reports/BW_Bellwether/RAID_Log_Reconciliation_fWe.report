@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>BW_RAID_Log__c.External_ID__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Primary_Owner__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Description__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Current_Update__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Next_Steps__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Status__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <format>Tabular</format>
+    <name>RAID Log Reconciliation</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$BW_RAID_Log__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>BW_RAID_Log__c.BW_Captured_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

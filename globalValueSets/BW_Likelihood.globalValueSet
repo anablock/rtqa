@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1 - Rare</fullName>
+        <default>true</default>
+        <label>1 - Rare</label>
+    </customValue>
+    <customValue>
+        <fullName>2 - Likely</fullName>
+        <default>false</default>
+        <label>2 - Likely</label>
+    </customValue>
+    <customValue>
+        <fullName>3 - Almost Certain</fullName>
+        <default>false</default>
+        <label>3 - Almost Certain</label>
+    </customValue>
+    <masterLabel>BW Likelihood</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

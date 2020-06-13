@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Workstream__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Status__c</field>
+    </columns>
+    <columns>
+        <field>BW_RAID_Log__c.BW_Description__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BW_RAID_Log__c.BW_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Completed,On Hold,Withdrawn</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>BW_RAID_Log__c.BW_Action_Item</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BW_RAID_Log__c.BW_Primary_Owner__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Closed Action Items - Primary Owner</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$BW_RAID_Log__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>BW_RAID_Log__c.BW_Captured_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

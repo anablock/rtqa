@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>BW_Status_Indicator__c</entityName>
+    <fieldName>BW_Report_Status__c</fieldName>
+    <masterLabel>Program Status</masterLabel>
+    <recordTypeName>BW_Program</recordTypeName>
+</PathAssistant>

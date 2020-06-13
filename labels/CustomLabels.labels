@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ARSMProfileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The profile name for Retail Store Manager</shortDescription>
+        <value>ARSM</value>
+    </labels>
+    <labels>
+        <fullName>Accept</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Accept</shortDescription>
+        <value>Accept</value>
+    </labels>
+    <labels>
+        <fullName>AcceptSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AcceptSpanish</shortDescription>
+        <value>Aceptar</value>
+    </labels>
+    <labels>
+        <fullName>AdditionalLines</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AdditionalLines</shortDescription>
+        <value>How Many Additional Lines?</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CancelSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CancelSpanish</shortDescription>
+        <value>Cancelar</value>
+    </labels>
+    <labels>
+        <fullName>ConsentMessage</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConsentMessage</shortDescription>
+        <value>By entering your mobile phone and/or email below, you agree to receive special offers and promotions from AT&amp;T relating to our products and services via automated and/or manual phone calls, text messages, and/or email. Message and data rates may apply. You understand that your consent is not a condition of purchase</value>
+    </labels>
+    <labels>
+        <fullName>ConsentMessageSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConsentMessageSpanish</shortDescription>
+        <value>Al ingresar abajo tu número de teléfono móvil o  correo electrónico, aceptas recibir ofertas especiales y promociones de AT&amp;T relacionadas a nuestros productos y servicios vía  llamadas telefónicas automatizadas y/o manuales , mensajes de texto y/o correos electrónicos. Podrían aplicar tarifas por mensaje y datos.  Entiendes que tu consentimiento no es una condición de compra.</value>
+    </labels>
+    <labels>
+        <fullName>ContactPreferences</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Preferences</shortDescription>
+        <value>Contact Preferences</value>
+    </labels>
+    <labels>
+        <fullName>CustomerConsent</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerConsent</shortDescription>
+        <value>Customer Consent</value>
+    </labels>
+    <labels>
+        <fullName>CustomerConsentSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerConsentSpanish</shortDescription>
+        <value>Autorización del cliente</value>
+    </labels>
+    <labels>
+        <fullName>CustomerContactDate</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerContactDate</shortDescription>
+        <value>Is there a specific date you would like to be contacted?</value>
+    </labels>
+    <labels>
+        <fullName>EmailSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailSpanish</shortDescription>
+        <value>Correo electrónico</value>
+    </labels>
+    <labels>
+        <fullName>EmployeeLocationRemoved</fullName>
+        <categories>LeadRedistribution</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmployeeLocationRemoved</shortDescription>
+        <value>Employee Location Removed</value>
+    </labels>
+    <labels>
+        <fullName>EmployeeOffboarded</fullName>
+        <categories>LeadRedistribution</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmployeeOffboarded</shortDescription>
+        <value>Employee Offboarded</value>
+    </labels>
+    <labels>
+        <fullName>EmployeeUseOnly</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Employee Use Only</shortDescription>
+        <value>Employee Use Only</value>
+    </labels>
+    <labels>
+        <fullName>Error</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>FirstNameSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FirstNameSpanish</shortDescription>
+        <value>Nombre</value>
+    </labels>
+    <labels>
+        <fullName>FollowupDateError</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FollowupDateError</shortDescription>
+        <value>Customer Requested Followup Date cannot be less than today</value>
+    </labels>
+    <labels>
+        <fullName>HomeLocationTransfer</fullName>
+        <categories>LeadRedistribution</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomeLocationTransfer</shortDescription>
+        <value>Home Location Transfer</value>
+    </labels>
+    <labels>
+        <fullName>LastNameSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LastNameSpanish</shortDescription>
+        <value>Apellido</value>
+    </labels>
+    <labels>
+        <fullName>LeadCaptured</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadCaptured</shortDescription>
+        <value>Captured</value>
+    </labels>
+    <labels>
+        <fullName>LeadContacted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadContacted</shortDescription>
+        <value>Contacted</value>
+    </labels>
+    <labels>
+        <fullName>MobilePhoneSpanish</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MobilePhoneSpanish</shortDescription>
+        <value>Núm. de teléfono móvil</value>
+    </labels>
+    <labels>
+        <fullName>NewLead</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Lead</shortDescription>
+        <value>New Lead</value>
+    </labels>
+    <labels>
+        <fullName>PhoneFormatError</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PhoneFormatError</shortDescription>
+        <value>Please enter a valid Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>PreferredDayOfContact</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreferredDayOfContact</shortDescription>
+        <value>When would you like us to reach out to you?</value>
+    </labels>
+    <labels>
+        <fullName>PreferredTimeOfContact</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreferredTimeOfContact</shortDescription>
+        <value>What&apos;s your preferred time of contact?</value>
+    </labels>
+    <labels>
+        <fullName>RedistributeThreshold</fullName>
+        <categories>LeadRedistribution</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Redistribute Threshold</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>RepProfileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The profile name for the Retail Rep</shortDescription>
+        <value>RSC-REP</value>
+    </labels>
+    <labels>
+        <fullName>RequiredError</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RequiredError</shortDescription>
+        <value>Complete this field</value>
+    </labels>
+    <labels>
+        <fullName>ResetFormFields</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ResetFormFields</shortDescription>
+        <value>Reset Form Fields</value>
+    </labels>
+    <labels>
+        <fullName>ResetMessage</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ResetMessage</shortDescription>
+        <value>Reset the form and clear all inputs?</value>
+    </labels>
+    <labels>
+        <fullName>SMProfileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The profile name for Store Manager</shortDescription>
+        <value>RSC-MGR</value>
+    </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <categories>LeadCapture</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,44 @@
+.container {
+    background: #F3F2F2;
+}
+.section  {
+    background: white;
+}
+.slds-modal__header{
+    background: white;
+}
+.content {
+    background: white;
+}
+.option-container{
+    border: 1px solid rgb(0, 112, 210);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgb(0, 112, 210);
+    cursor: pointer;
+    width: 95%;
+    margin: 5px 10px 10px 0px;
+    text-align: center;
+}
+
+.option-container.selected{
+    background-color: rgb(0, 112, 210);
+    color: rgb(255, 255, 255) !important;
+}
+
+.content-container-noimage{
+    padding: 5px;
+}
+
+.overlay{
+    
+    position: absolute; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:white; /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    opacity: 0.8;
+}

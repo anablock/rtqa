@@ -1,0 +1,8 @@
+.myBtn  {
+    width: 300px;
+    /*margin-left : 50%;*/
+}
+.slds-scope .slds-form-element{
+    /*max-height: calc(((0.8125rem * 1.5) + 1rem) * 3) !important;*/
+   max-width: 100px !important;
+}

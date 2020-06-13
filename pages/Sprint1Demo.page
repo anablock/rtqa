@@ -1,0 +1,35 @@
+<apex:page controller="C360Sprint1Demo" showHeader="true">
+    <apex:form >
+        <apex:pageBlock mode="edit" >
+            <apex:pageMessages />
+            <apex:pageBlockSection title="Address">
+                <apex:inputText id="a" value="{!addressLine1}" label="Address Line"/>
+                <!--apex:inputText id="b" value="{!addressLine2}" label="Address Line2"/-->
+                <!--apex:inputText id="c" value="{!unitType1}" label="Unit Type"/-->
+                <!--apex:inputText id="d" value="{!unitNumber1}" label="Unit Numnber"/-->
+                <apex:inputText id="e" value="{!city}" label="City"/>
+                <apex:inputText id="f" value="{!state}" label="State"/>
+                <apex:inputText id="g" value="{!zip}" label="Zip Code"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Submit" action="{!getServiceAddresses}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Elapsed Response Time (ms)">
+                <apex:outputText value="{!elapsedTime}"/>
+            </apex:pageBlockSection>   
+            <apex:pageBlockSection title="Service Address Response">
+                <apex:outputText value="{!serviceAddressResponse}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Elapsed Response Time (ms)">
+                <apex:outputText value="{!elapsedTime2}"/>
+            </apex:pageBlockSection> 
+            <apex:pageBlockSection title="Service Availability Response">
+                <apex:outputText value="{!serviceAvailabilityResponse}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

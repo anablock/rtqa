@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Centers</fullName>
+        <default>false</default>
+        <label>Centers</label>
+    </customValue>
+    <customValue>
+        <fullName>CLM</fullName>
+        <default>false</default>
+        <label>CLM</label>
+    </customValue>
+    <customValue>
+        <fullName>C360</fullName>
+        <default>false</default>
+        <label>C360</label>
+    </customValue>
+    <customValue>
+        <fullName>Engineering</fullName>
+        <default>false</default>
+        <label>Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Arch &amp; Int</fullName>
+        <default>false</default>
+        <label>Arch &amp; Int</label>
+    </customValue>
+    <customValue>
+        <fullName>Program</fullName>
+        <default>false</default>
+        <label>Program</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </customValue>
+    <customValue>
+        <fullName>RLM</fullName>
+        <default>false</default>
+        <label>RLM</label>
+    </customValue>
+    <customValue>
+        <fullName>Product Leaders</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Product Leaders</label>
+    </customValue>
+    <customValue>
+        <fullName>Leadership</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Leadership</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Architecture</label>
+    </customValue>
+    <masterLabel>BW Workstreams</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
